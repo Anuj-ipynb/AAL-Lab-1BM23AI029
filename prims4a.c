@@ -9,15 +9,14 @@ int minKey(int key[], int mstSet[]) {
 }
 
 void primMST(int graph[V][V]) {
-    int parent[V]; // Store MST
-    int key[V];    // Key values
-    int mstSet[V]; // Vertices included
-
+    int parent[V];  
+    int key[V];    
+    int mstSet[V]; 
     for (int i = 0; i < V; i++)
         key[i] = INT_MAX, mstSet[i] = 0;
 
-    key[0] = 0;     // Start from vertex 0
-    parent[0] = -1; // First node is root
+    key[0] = 0;     
+    parent[0] = -1; 
 
     for (int count = 0; count < V - 1; count++) {
         int u = minKey(key, mstSet);
