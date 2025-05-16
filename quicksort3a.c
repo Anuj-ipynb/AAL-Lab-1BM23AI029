@@ -34,3 +34,6 @@ int main() {
         printf("%d ", arr[i]);
     return 0;
 }
+
+/*Output:
+Sorted array: 1 11 40 64 78*/
