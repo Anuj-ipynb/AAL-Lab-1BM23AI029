@@ -46,3 +46,5 @@ int main() {
     printf("The minimum cost is: %d\n", tsp(1, 0)); 
     return 0;
 }
+/*Output
+The minimum cost is: 85*/
