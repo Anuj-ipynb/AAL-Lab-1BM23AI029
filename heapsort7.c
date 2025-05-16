@@ -36,6 +36,9 @@ void heapsort(int arr[], int n) {
     }
 }
 
+/*Output
+    Sorted array: 5 6 7 11 12 13 */
+
 void printArray(int arr[], int n) {
     for (int i = 0; i < n; i++) {
         printf("%d ", arr[i]);
