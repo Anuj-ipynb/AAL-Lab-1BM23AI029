@@ -1,57 +1,48 @@
 #include <stdio.h>
-#include <stdbool.h>
+#include <math.h>
 
-#define N 4  
+int board[20], count,i;
 
-int board[N][N];
-
-bool isSafe(int row, int col) {
-    for (int i = 0; i < col; i++)
-        if (board[row][i])
-            return false;
-
-    for (int i = row, j = col; i >= 0 && j >= 0; i--, j--)
-        if (board[i][j])
-            return false;
-
-    for (int i = row, j = col; i < N && j >= 0; i++, j--)
-        if (board[i][j])
-            return false;
-
-    return true;
+int place(int row, int column) {
+    for (i = 1; i < row; i++)
+        if (board[i] == column || abs(board[i] - column) == abs(i - row))
+            return 0;
+    return 1;
 }
-
-bool solveNQueens(int col) {
-    if (col >= N)
-        return true;
-
-    for (int i = 0; i < N; i++) {
-        if (isSafe(i, col)) {
-            board[i][col] = 1;
-
-            if (solveNQueens(col + 1))
-                return true;
-
-            board[i][col] = 0;  
+void printSolution(int n) {
+    printf("\nSolution %d:\n", ++count);
+    int i,j;
+    for (i = 1; i <= n; i++) {
+        for (j = 1; j <= n; j++) {
+            if (board[i] == j)
+                printf("Q ");
+            else
+                printf("- ");
         }
-    }
-
-    return false;
-}
-
-void printBoard() {
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++)
-            printf("%d ", board[i][j]);
         printf("\n");
+    }
+}
+void nQueens(int row, int n) {
+	int column;
+    for (column = 1; column <= n; column++) {
+        if (place(row, column)) {
+board[row] = column;
+            if (row == n)
+                printSolution(n);
+            else
+                nQueens(row + 1, n);
+        }
     }
 }
 
 int main() {
-    if (solveNQueens(0))
-        printBoard();
-    else
-        printf("No solution exists.\n");
+    int n;
+    printf("Enter number of queens: ");
+    scanf("%d", &n);
+
+    count = 0;
+    nQueens(1, n);
+    printf("\nTotal Solutions = %d\n", count);
 
     return 0;
 }
