@@ -40,6 +40,11 @@ int main() {
     return 0;
 }
 
-
+/*Output:
+Enter size of array:5
+Enter array elements:10 40 33 67 7 
+Unsorted Array:10 40 33 67 7 
+Sorted array: 
+7 10 33 40 67 */
 
 
