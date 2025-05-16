@@ -46,3 +46,21 @@ int main() {
 
     return 0;
 }
+
+/*Output
+Enter number of queens: 4
+
+Solution 1:
+- Q - - 
+- - - Q 
+Q - - - 
+- - Q - 
+
+Solution 2:
+- - Q - 
+Q - - - 
+- - - Q 
+- Q - - 
+
+Total Solutions = 2
+*/
