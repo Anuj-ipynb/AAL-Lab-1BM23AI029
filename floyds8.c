@@ -41,3 +41,9 @@ int main() {
     floyd(graph);
     return 0;
 }
+/*Output:
+Shortest distances:
+  0   3   5   6 
+  5   0   2   3 
+  3   6   0   1 
+  2   5   7   0 */
