@@ -19,3 +19,5 @@ int main() {
         printf("%d ", arr[i]);
     return 0;
 }
+//output
+// Sorted array: 10 12 22 45 80
